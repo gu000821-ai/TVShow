@@ -1,0 +1,13 @@
+.gradle/
+.kotlin/
+.idea/
+local.properties
+**/build/
+captures/
+*.iml
+/*.apk
+/*.png
+/api19-*.xml
+/visible-*.xml
+/window*.xml
+/streambox-*.xml
