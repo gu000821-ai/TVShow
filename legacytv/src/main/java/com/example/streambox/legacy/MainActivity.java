@@ -171,7 +171,7 @@ public class MainActivity extends Activity {
             smartChannels.addAll(parseM3u(getPreferences(MODE_PRIVATE).getString("iptv_playlist_" + SOURCE_HD, "")));
             smartChannels.addAll(parseM3u(getPreferences(MODE_PRIVATE).getString("iptv_playlist_" + SOURCE_4K, "")));
         } catch (Exception error) {
-            Toast.makeText(this, "乘风源读取失败：" + message(error), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "源读取失败：" + message(error), Toast.LENGTH_LONG).show();
         }
         showSplash();
     }
@@ -304,7 +304,7 @@ public class MainActivity extends Activity {
         sources.setOrientation(LinearLayout.HORIZONTAL);
         Button hd = sourceButton("高清源 · 稳定", SOURCE_HD);
         Button ultra = sourceButton("4K源 · 超清", SOURCE_4K);
-        Button cf = sourceButton("乘风源 · 全量", SOURCE_CF);
+        Button cf = sourceButton("CF源 · 全量", SOURCE_CF);
         sources.addView(hd, spacedButtonParams(210, 60));
         sources.addView(ultra, spacedButtonParams(210, 60));
         sources.addView(cf, spacedButtonParams(210, 60));
@@ -313,7 +313,7 @@ public class MainActivity extends Activity {
         String sourceText = SOURCE_4K.equals(currentLiveSource)
                 ? "4K源：suxuang/myIPTV · 仅显示4K频道，需电视支持对应视频编码"
                 : SOURCE_CF.equals(currentLiveSource)
-                ? "乘风1.0.1：内置47分组、4223条线路 · 点击频道后自动测速择优"
+                ? "CF1.0.1：内置47分组、4223条线路 · 点击频道后自动测速择优"
                 : "高清源：vbskycn/iptv · 点击频道后自动从同名线路中测速择优";
         TextView source = text(sourceText, 15, MUTED);
         source.setPadding(dp(4), dp(8), 0, dp(8));
